@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+ }
+
+ header {
+    text-align: right;
+    background-color: #255E6D;
+    padding: 10px;
+    }
+ header nav ul li {
+    display: inline;
+    margin: 15px;
+    }
+
+h1 {
+    text-align: center;
+}
+
+#pedido {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    width: 300px;
+}
+
+button { 
+    background-color: #255E6D;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+}
+
+button:hover { 
+    background-color: #9aebff;
+   }
+
+.form-container {
+    text-align: center;
+ }

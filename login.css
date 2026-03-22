@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:#255E6D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.titulo-login { 
+  text-align: center;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.container { 
+align-items: center;
+flex-direction: column;
+}
+
+label { 
+text-align: left;
+color:#fff;
+font-size: large;
+}
+
+.login-container { 
+    background: #255E6D;
+    background-color: #255E6D;
+    border: 3px solid #fff; 
+    padding: 50px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15;
+}
+
+#login {
+    border: none;
+    border-radius: 20px;
+    padding: 15px;
+    text-align:left;
+    font-size: 16px;
+ }
+
+ #senha {
+    border: none;
+    border-radius: 20px;
+    padding: 15px;
+    text-align:left;
+    font-size: 16px;
+ }
+
+ #botao-acessar {
+    border: none;
+    border-radius: 20px;
+    padding: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  #botao-primeiro-acesso {
+    border: none;
+    border-radius: 20px;
+    padding: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  #botao-acessar:hover { 
+    background-color: #9aebff;
+    color: #fff;
+  }
+
+  #botao-primeiro-acesso:hover {
+    background-color: #9aebff;
+    color: #fff;
+  } 
+
+  #botao-acessar {
+    background: #3B91A9;
+    color: white;
+    width: 100%;
+  }
+
+  #botao-primeiro-acesso {
+    background: #255E6D;
+    border: 1px solid white;
+    color: white;
+    width: 100%;
+  }
+
+  @media (max-width:400px) { 
+    .login-box { 
+      width: 90%;
+      padding: 20px;
+      margin: 0 auto;
+    }
+   }
