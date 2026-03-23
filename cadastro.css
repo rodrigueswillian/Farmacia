@@ -12,15 +12,21 @@ body {
     align-items: center;
     width: 100%;
  }
-
+ #formulario input {
+  width: 200px;          /* largura fixa */
+  box-sizing: border-box; /* evita overflow com padding */
+  display: block;        /* cada campo em sua linha */
+  margin-bottom: 10px;
+}
  .form-box {
     background-color: #255E6D;
     border-radius: 10px;
-    padding: 2%;
-    width: 100%;
-    max-width: 500px;
+    padding: 5%;
+    width: 50%;
+    max-width: 400px;
     color: #ffffff;
     border: 3px solid #fff;
+    height: 50px auto;
   }
 
   .header { 

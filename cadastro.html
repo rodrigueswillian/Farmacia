@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
     <link rel="stylesheet" href="cadastro.css">
-    <script src="script.js"></script>
+    <script src="cadastro.js"></script>
 </head>
 <body>
     <div class="container">
@@ -23,10 +23,12 @@
            <br>
            <input type="date" id="date" required>
            <br>
-           <label for="celular">Celular*</label>
+           <label for="celular">Celular</label>
            <br>
-           <input type="tel" id="celular" required>
+           <input type="tel" id="celular" name="telefone" placeholder="(99) 99999-9999" maxlength="15" required> 
            <br>
+            <p id="erro" style="color:red; display:none;">Por favor, preencha o número completo!</p>
+
            <label for="email">Email*</label>
            <br>
            <input type="email" id="email" required>
@@ -37,9 +39,9 @@
            <br>
            <label for="confirmar-senha">Confirme sua senha*</label>
            <br>
-           <input type="password" id="confirmar-senha" required>
+           <input type="password" id="confirmarsenha" required>
            <br>
-           <button type="submit"> Cadastrar </button>
+           <button type="submit" id="botaotelalogin"> Cadastrar </button>
 
         </form>
 </body>
