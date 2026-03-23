@@ -1,27 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela Inicial</title>
+    <title>Farmácia ShockLoud</title>
     <link rel="stylesheet" href="tela-inicial.css">
     <script src="script.js"></script>
 </head>
 <body>
     <header>
         <nav>
+            <form>
             <ul>
-                <li>Contato</li>
-                <li>Ajuda</li>
-                <li>Entrega</li>
+                <input id="pedido" type="text" placeholder="Digite o número do seu pedido">
+
+                <button id="enviar" type="submit">Enviar</button>
+
+                <button  class = "contato">Contato</button>
+
+                <button class = "ajuda">Ajuda</button>
+
+                <button class = "entrega">Entrega</button>
+
             </ul>
         </nav>
     </header>
-    <h1> Faça sua busca aqui</h1>
+    <div class="caixa">
     <div class="form-container">  
-        <input id="pedido" type="text" placeholder="Digite o número do seu pedido">
-        <button type="submit">Enviar</button>
+        <h1>Bem-vindo à Farmácia ShockLoud!</h1>
+        <p>Encontre os melhores produtos para sua saúde e bem-estar.</p>
+        <button onclick="window.location.href='cadastro.html'">Faça seu Cadastro</button>
+    </div>
     </div>
     </form>
-</body>
+
+    </body>
 </html>
