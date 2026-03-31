@@ -1,9 +1,9 @@
 body { 
-    background: #255E6D;
+    background: #8B0000;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh; 
 }
 
 .container {
@@ -11,85 +11,88 @@ body {
     justify-content:center;
     align-items: center;
     width: 100%;
- }
- #formulario input {
-  width: 200px;          /* largura fixa */
-  box-sizing: border-box; /* evita overflow com padding */
-  display: block;        /* cada campo em sua linha */
+}
+
+#formulario input {
+  width: 200px;
+  box-sizing: border-box;
+  display: block;
   margin-bottom: 10px;
 }
- .form-box {
-    background-color: #255E6D;
-    border-radius: 10px;
-    padding: 5%;
-    width: 50%;
-    max-width: 400px;
-    color: #ffffff;
-    border: 3px solid #fff;
-    height: 50px auto;
-  }
 
-  .header { 
+.form-box {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    
+    width: 90%;          
+    max-width: 400px;  
+    
+    color: #8B0000;
+    border: 3px solid #ff0000;
+}
+.header { 
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
-    gap: 15px;
-  }
+    justify-content: flex-start; /* garante que fica à esquerda */
+    gap: 10px;
+}
 
-  .back-arrow { 
-    color: #ffffff; 
+.back-arrow {
+    color: #ff0000; /* vermelho visível */
+    font-size: 28px;
     text-decoration: none;
-    font-size: 30px;
-    margin-right: 100px;
-    font-weight: bold
-  }
+    font-weight: bold;
+    cursor: pointer;
+    display: inline-block; /* importante */
+}
 
-  .back-arrow:hover {
-    transform:scale(2);
-    transition: all 0,2s ease;
-   }
-
-  .header h1 { 
+.back-arrow:hover {
+    transform: scale(1.2);
+    transition: 0.2s;
+}
+.header h1 { 
     font-size: 35px;
-    font-weight:normal;
-  }
+    font-weight: normal;
+}
 
-  form {
+form {
     display: flex;
     flex-direction: column;
-   }
+}
 
-   label { 
+label { 
     margin-bottom: 5px;
     font-size: 20px;
-   }
+    color: #8B0000;
+}
 
-   input { 
+input { 
     margin-bottom: 15px;
     padding: 10px;
-    border: none;
+    border: 2px solid #ff0000;
     border-radius: 5px;
     font-size: 15px;
-   }
+}
 
-   button { 
-    background-color: #3B91A9;
-    color: #fff;
+button { 
+    background-color: #ff0000; /* vermelho forte */
+    color: #ffffff;
     border: none;
     padding: 10px;  
     border-radius: 5px;
     font-size: 20px;
     cursor: pointer;
-   }
+}
 
-   button:hover { 
-    background-color: #9aebff;
-   }
+button:hover { 
+    background-color: #cc0000; /* vermelho mais escuro */
+}
 
-   @media (max-width:400px) { 
+@media (max-width:400px) { 
     .login-box { 
       width: 90%;
       padding: 20px;
       margin: 0 auto;
     }
-   }
+}
