@@ -8,14 +8,15 @@ document.addEventListener("DOMContentLoaded", function () {
       const email = document.getElementById("email").value.trim();
       const celular = document.getElementById("celular").value.trim();
       const senha = document.getElementById("senha").value.trim();
-      const confirmarsenha = document.getElementById("confirmar-senha").value.trim();
+      const confirmarsenha = document
+        .getElementById("confirmar-senha")
+        .value.trim();
       if (!nome || !email || !date || !celular || !senha || !confirmarsenha) {
         // bloqueia envio do formulário
         alert("Preencha todos os campos antes de continuar!");
         return false;
       } else {
         window.location.href = "login.html";
-      
       }
 
       //event.preventDefault();
@@ -24,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   const celular = document.getElementById("celular");
-  const botaotelalogin = document.getElementById("botaotelalogin")
+  const botaotelalogin = document.getElementById("botaotelalogin");
   const erro = document.getElementById("erro");
 
   // Máscara segura
@@ -53,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
       celular.focus();
     } else {
       erro.style.display = "none";
-       window.location.href = "login.html";
+      window.location.href = "login.html";
     }
   });
 });
