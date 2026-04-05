@@ -1,29 +1,35 @@
+* {
+    box-sizing: border-box;
+}
+
 body { 
     background: #8B0000;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* corrigido */
     min-height: 100vh; 
+    padding: 20px; /* evita corte */
+    margin: 0;
 }
 
 .container {
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     width: 100%;
 }
 
-#formulario input {
-  width: 200px;
-  box-sizing: border-box;
-  display: block;
-  margin-bottom: 10px;
+/* Corrigido (antes estava #formulario input) */
+form input {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
 }
 
 .form-box {
     background-color: #ffffff;
     border-radius: 10px;
-    padding: 20px;
+    padding: 25px;
     
     width: 90%;          
     max-width: 400px;  
@@ -31,28 +37,30 @@ body {
     color: #8B0000;
     border: 3px solid #ff0000;
 }
+
 .header { 
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* garante que fica à esquerda */
+    justify-content: flex-start;
     gap: 10px;
 }
 
 .back-arrow {
-    color: #ff0000; /* vermelho visível */
+    color: #ff0000;
     font-size: 28px;
     text-decoration: none;
     font-weight: bold;
     cursor: pointer;
-    display: inline-block; /* importante */
+    display: inline-block;
 }
 
 .back-arrow:hover {
     transform: scale(1.2);
     transition: 0.2s;
 }
+
 .header h1 { 
-    font-size: 35px;
+    font-size: 28px;
     font-weight: normal;
 }
 
@@ -63,7 +71,7 @@ form {
 
 label { 
     margin-bottom: 5px;
-    font-size: 20px;
+    font-size: 18px;
     color: #8B0000;
 }
 
@@ -76,23 +84,31 @@ input {
 }
 
 button { 
-    background-color: #ff0000; /* vermelho forte */
+    width: 100%; /* importante */
+    background-color: #ff0000;
     color: #ffffff;
     border: none;
-    padding: 10px;  
-    border-radius: 5px;
-    font-size: 20px;
+    padding: 12px;  
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 button:hover { 
-    background-color: #cc0000; /* vermelho mais escuro */
+    background-color: #cc0000;
+    transform: scale(1.03);
 }
 
-@media (max-width:400px) { 
-    .login-box { 
-      width: 90%;
-      padding: 20px;
-      margin: 0 auto;
+/* Responsivo */
+@media (max-width: 400px) { 
+    .form-box { 
+        width: 100%;
+        padding: 20px;
+    }
+
+    .header h1 {
+        font-size: 22px;
     }
 }

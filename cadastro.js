@@ -1,39 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
-  document
-    .getElementById("botaotelalogin")
-    .addEventListener("click", function (event) {
-      event.preventDefault();
-      const nome = document.getElementById("nome").value.trim();
-      const date = document.getElementById("date").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const celular = document.getElementById("celular").value.trim();
-      const senha = document.getElementById("senha").value.trim();
-      const confirmarsenha = document
-        .getElementById("confirmar-senha")
-        .value.trim();
-      if (!nome || !email || !date || !celular || !senha || !confirmarsenha) {
-        // bloqueia envio do formulário
-        alert("Preencha todos os campos antes de continuar!");
-        return false;
-      } else {
-        window.location.href = "login.html";
-      }
-
-      //event.preventDefault();
-    });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("formCadastro");
   const celular = document.getElementById("celular");
-  const botaotelalogin = document.getElementById("botaotelalogin");
   const erro = document.getElementById("erro");
 
-  // Máscara segura
+  // Máscara celular
   celular.addEventListener("input", function (e) {
-    let v = e.target.value.replace(/\D/g, ""); // só números
-    if (v.length > 11) v = v.substring(0, 11); // limita a 11 dígitos
+    let v = e.target.value.replace(/\D/g, "");
+    if (v.length > 11) v = v.substring(0, 11);
 
-    // Formata (99) 99999-9999
     if (v.length > 5) {
       v = v.replace(/^(\d{2})(\d{5})(\d{0,4})$/, "($1) $2-$3");
     } else if (v.length > 2) {
@@ -45,16 +19,55 @@ document.addEventListener("DOMContentLoaded", function () {
     e.target.value = v;
   });
 
-  // Validação ao enviar
-  botaotelalogin.addEventListener("click", function (e) {
-    const numeros = celular.value.replace(/\D/g, "");
+  // VALIDAÇÃO PRINCIPAL
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const nome = document.getElementById("nome").value.trim();
+    const date = document.getElementById("date").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const celularValor = celular.value.trim();
+    const senha = document.getElementById("senha").value.trim();
+    const confirmarSenha = document
+      .getElementById("confirmarSenha")
+      .value.trim();
+
+    // Campos vazios
+    if (!nome || !email || !date || !celularValor || !senha || !confirmarSenha) {
+      alert("Preencha todos os campos!");
+      return;
+    }
+
+    // Email válido
+    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!regexEmail.test(email)) {
+      alert("Email inválido!");
+      return;
+    }
+
+    // Celular válido
+    const numeros = celularValor.replace(/\D/g, "");
     if (numeros.length !== 11) {
-      e.preventDefault();
       erro.style.display = "block";
       celular.focus();
+      return;
     } else {
       erro.style.display = "none";
-      window.location.href = "login.html";
     }
+
+    // Senhas iguais
+    if (senha !== confirmarSenha) {
+      alert("As senhas não coincidem!");
+      return;
+    }
+    
+    if (senha.length < 6) {
+  alert("Senha precisa ter no mínimo 6 caracteres");
+  return;
+}
+
+    // ✅ SUCESSO
+    alert("Cadastro realizado com sucesso! 🚀");
+    window.location.href = "login.html";
   });
 });

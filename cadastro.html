@@ -1,48 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
     <link rel="stylesheet" href="cadastro.css">
-    <script src="cadastro.js"></script>
+
+    <!-- IMPORTANTE: defer -->
+    <script src="cadastro.js" defer></script>
 </head>
+
 <body>
     <div class="container">
         <div class="form-box">
             <div class="header">
-      <a href="login.html" class="back-arrow">←</a>
-                <h1> Criação de conta </h1>          
+                <a href="login.html" class="back-arrow">←</a>
+                <h1>Criação de conta</h1>          
+            </div>
+
+            <!-- Adicionado ID -->
+            <form id="formCadastro">
+
+                <label for="nome">Nome Completo*</label>
+                <br>
+                <input type="text" id="nome" required>
+                <br>
+
+                <label for="date">Data de nascimento*</label>
+                <br>
+                <input type="date" id="date" required>
+                <br>
+
+                <label for="celular">Celular*</label>
+                <br>
+                <input type="tel" id="celular" placeholder="(99) 99999-9999" maxlength="15" required> 
+                <br>
+
+                <p id="erro" style="color:red; display:none;">
+                  Por favor, preencha o número completo!
+                </p>
+
+                <label for="email">Email*</label>
+                <br>
+                <input type="email" id="email" required>
+                <br>
+
+                <label for="senha">Crie uma senha*</label>
+                <br>
+                <input type="password" id="senha" required>
+                <br>
+
+                <label for="confirmarSenha">Confirme sua senha*</label>
+                <br>
+            
+                <input type="password" id="confirmarSenha" required>
+                <br>
+
+                <button type="submit" id="botaotelalogin">
+                    Cadastrar
+                </button>
+
+            </form>
         </div>
-        <form action="#">
-            <label for="nome">Nome Completo*</label>
-            <br>
-            <input type="text" id="nome" required>
-            <br>
-           <label for="date"> Data de nascimento*</label>
-           <br>
-           <input type="date" id="date" required>
-           <br>
-           <label for="celular">Celular</label>
-           <br>
-           <input type="tel" id="celular" name="telefone" placeholder="(99) 99999-9999" maxlength="15" required> 
-           <br>
-            <p id="erro" style="color:red; display:none;">Por favor, preencha o número completo!</p>
-
-           <label for="email">Email*</label>
-           <br>
-           <input type="email" id="email" required>
-           <br>
-           <label for="senha">Crie uma senha*</label>
-           <br>
-           <input type="password" id="senha" required>
-           <br>
-           <label for="confirmar-senha">Confirme sua senha*</label>
-           <br>
-           <input type="password" id="confirmarsenha" required>
-           <br>
-           <button type="submit" id="botaotelalogin"> Cadastrar </button>
-
-        </form>
+    </div>
 </body>
 </html>
