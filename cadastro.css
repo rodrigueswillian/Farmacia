@@ -10,7 +10,6 @@ body {
     padding: 20px;
     margin: 0;
 
-    /* 🔴 Fundo com degradê vermelho suave */
     background: linear-gradient(135deg, #ffd6d6 0%, #ff4d4d 50%, #cc0000 100%);
 }
 
@@ -21,26 +20,20 @@ body {
     width: 100%;
 }
 
-/* Inputs organizados */
-form input {
-    width: 100%;
-    display: block;
-    margin-bottom: 12px;
-}
-
-/* 🔴 Card branco */
+/* CARD */
 .form-box {
-    background: #ffffff; /* card branco */
+    background: #ffffff;
     border-radius: 12px;
     padding: 30px;
     
     width: 90%;          
     max-width: 400px;  
     
-    color: #800000; /* texto em vermelho escuro */
+    color: #800000;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
 }
 
+/* HEADER */
 .header { 
     display: flex;
     align-items: center;
@@ -49,12 +42,11 @@ form input {
 }
 
 .back-arrow {
-    color: #ff4d4d; /* vermelho */
+    color: #ff4d4d;
     font-size: 28px;
     text-decoration: none;
     font-weight: bold;
     cursor: pointer;
-    display: inline-block;
     transition: 0.2s;
 }
 
@@ -67,27 +59,28 @@ form input {
     font-weight: normal;
 }
 
-/* Form layout */
+/* FORM */
 form {
     display: flex;
     flex-direction: column;
+    gap: 12px; /* controla espaço entre campos */
 }
 
+/* LABEL */
 label { 
-    margin-bottom: 5px;
     font-size: 16px;
     color: #800000;
 }
 
-/* Inputs */
+/* INPUTS */
 input { 
-    margin-bottom: 15px;
+    width: 100%;
     padding: 12px;
 
     border: 1px solid #ddd;
     border-radius: 8px;
 
-    font-size: 15px;
+    font-size: 16px;
     outline: none;
 
     transition: 0.3s;
@@ -98,7 +91,26 @@ input:focus {
     box-shadow: 0 0 6px rgba(255, 77, 77, 0.4);
 }
 
-/* Botão com degradê vermelho */
+/* DATE */
+input[type="date"] {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+/* 🚨 ERRO INTELIGENTE */
+#erro {
+    margin: 0;
+    font-size: 14px;
+    color: red;
+    min-height: 18px;
+    display: none;
+}
+
+/* BOTÃO */
 button { 
     width: 100%;
     padding: 12px;  
@@ -121,8 +133,13 @@ button:hover {
     opacity: 0.95;
 }
 
-/* Responsivo */
-@media (max-width: 400px) { 
+/* RESPONSIVO */
+@media (max-width: 600px) { 
+    body {
+        padding: 10px;
+        align-items: center;
+    }
+
     .form-box { 
         width: 100%;
         padding: 20px;
@@ -130,5 +147,25 @@ button:hover {
 
     .header h1 {
         font-size: 22px;
+    }
+
+    input {
+        font-size: 16px;
+        padding: 14px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 14px;
+    }
+}
+
+@media (max-width: 400px) { 
+    .form-box { 
+        padding: 15px;
+    }
+
+    .header h1 {
+        font-size: 20px;
     }
 }
