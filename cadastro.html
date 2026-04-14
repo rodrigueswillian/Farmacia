@@ -4,64 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
+
     <link rel="stylesheet" href="cadastro.css">
 
-    <!-- IMPORTANTE: defer -->
+    <!-- JS com defer (correto) -->
     <script src="cadastro.js" defer></script>
 </head>
 
 <body>
+
     <div class="container">
         <div class="form-box">
+
+            <!-- HEADER -->
             <div class="header">
                 <a href="login.html" class="back-arrow">←</a>
-                <h1>Criação de conta</h1>          
+                <h1>Criação de conta</h1>
             </div>
 
-            <!-- Adicionado ID -->
+            <!-- FORMULÁRIO -->
             <form id="formCadastro">
 
+                <!-- NOME -->
                 <label for="nome">Nome Completo*</label>
-                <br>
                 <input type="text" id="nome" required>
-                <br>
 
+                <!-- DATA NASCIMENTO -->
                 <label for="date">Data de nascimento*</label>
-                <br>
-                <input type="date" id="date" max="" required>
-                <br>
+                <input type="date" id="date" required>
 
+                <!-- CELULAR -->
                 <label for="celular">Celular*</label>
-                <br>
-                <input type="tel" id="celular" placeholder="+55 21 91234-5678" maxlength="22" required> 
-                <br>
+                <input 
+                    type="tel" 
+                    id="celular" 
+                    placeholder="+55 21 91234-5678"
+                    required
+                >
 
-                <p id="erro" style="color:red; display:none;">
-                  Por favor, preencha o número completo!
-                </p>
+                <!-- ERRO CELULAR -->
+                <p id="erro" class="erro-msg"></p>
 
+                <!-- EMAIL -->
                 <label for="email">Email*</label>
-                <br>
                 <input type="email" id="email" required>
-                <br>
 
+                <!-- SENHA -->
                 <label for="senha">Crie uma senha*</label>
-                <br>
                 <input type="password" id="senha" required>
-                <br>
 
+                <!-- CONFIRMAR SENHA -->
                 <label for="confirmarSenha">Confirme sua senha*</label>
-                <br>
-            
                 <input type="password" id="confirmarSenha" required>
-                <br>
 
-                <button type="submit" id="botaotelalogin">
+                <!-- BOTÃO -->
+                <button type="submit" id="btnCadastro">
                     Cadastrar
                 </button>
 
             </form>
+
         </div>
     </div>
+
 </body>
 </html>
