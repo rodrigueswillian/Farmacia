@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Segurança ShockLoud</title>
-<script src="tela-inicial.js"></script>
+
     <link rel="stylesheet" href="tela-inicial.css">
 </head>
 
@@ -15,26 +15,31 @@
     </header>
 
     <main class="caixa-externa">
-      <div class="form-container">
-    <h2>Proteja seu dia a dia</h2>
-    <p>Pesquise e aprenda práticas de segurança para você e sua família.</p>
+        <div class="form-container">
+            <h2>Proteja seu dia a dia</h2>
+            <p>Pesquise e aprenda práticas de segurança para você e sua família.</p>
 
-  <form>
+            <!-- NÃO precisa de form -->
+            <div class="caixa-pesquisa">
+                <input id="pedido" type="text" placeholder="Digite sua dúvida...">
+                <button type="button" id="enviar">Pesquisar</button>
 
-    <div class="caixa-pesquisa">
-        <input id="pedido" type="text" placeholder="Digite sua dúvida...">
-        <button id="enviar">Pesquisar</button>
-    </div>
-</form>
-<button type="button" id="botao-tela-principal">Faça seu Cadastro</button>
-</div>
+                <!-- Resultado aparece aqui -->
+                <p id="resultado"></p>  
+            </div>
+
+            <button type="button" id="botao-tela-principal">Faça seu Cadastro</button>
+        </div>
     </main>
 
     <footer class="rodape">
         <p>📞 Contato: (21) 99999-9999</p>
         <p>📧 Email: contato@shockloud.com</p>
-        <p>© 2026 ShockLoud</p>
+        <p>© 2026 ShockLoudSegurança</p>
     </footer>
+
+    <!-- SCRIPT SEMPRE NO FINAL -->
+    <script src="tela-inicial.js"></script>
 
 </body>
 </html>
