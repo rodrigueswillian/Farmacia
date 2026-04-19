@@ -4,8 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Queimadura</title>
+  <script src="telaqueimadura.js"></script>
   <link rel="stylesheet" href="telaqueimadura.css">
 </head>
+<div id="modal" class="modal">
+  <div id="modalBox" class="modal-box"></div>
+</div>
 <body>
 
   <header>
@@ -44,6 +48,11 @@
       </div>
     </div>
   </section>
+  <section class="quiz">
+  <h2>Não sabe o grau da queimadura?</h2>
+  <p>Responda algumas perguntas rápidas:</p>
+  <button onclick="diagnostico()">Descobrir agora</button>
+</section>
 
   <footer>
     <p>2026</p>
@@ -51,4 +60,3 @@
 
 </body>
 </html>
-
