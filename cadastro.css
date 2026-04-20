@@ -9,10 +9,52 @@ body {
     min-height: 100vh; 
     padding: 20px;
     margin: 0;
-
     background: linear-gradient(135deg, #ffd6d6 0%, #ff4d4d 50%, #cc0000 100%);
 }
 
+/* ===== MODAL CORRIGIDO ===== */
+dialog {
+    border: none;
+    border-radius: 12px;
+    padding: 25px;
+    width: 320px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    animation: pop 0.2s ease-in-out;
+}
+
+@keyframes pop {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    color: #cc0000;
+    font-weight: bold;
+}
+
+dialog button {
+    margin-top: 15px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    background: #cc0000;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* ===== CONTAINER ===== */
 .container {
     display: flex;
     justify-content: center;
@@ -20,15 +62,13 @@ body {
     width: 100%;
 }
 
-/* CARD */
+/* ===== FORM BOX (NÃO MEXI NA ESTRUTURA) ===== */
 .form-box {
     background: #ffffff;
     border-radius: 12px;
     padding: 30px;
-    
     width: 90%;          
     max-width: 400px;  
-    
     color: #800000;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
 }
@@ -37,7 +77,6 @@ body {
 .header { 
     display: flex;
     align-items: center;
-    justify-content: flex-start;
     gap: 10px;
 }
 
@@ -45,25 +84,13 @@ body {
     color: #ff4d4d;
     font-size: 28px;
     text-decoration: none;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.back-arrow:hover {
-    transform: scale(1.2);
-}
-
-.header h1 { 
-    font-size: 28px;
-    font-weight: normal;
 }
 
 /* FORM */
 form {
     display: flex;
     flex-direction: column;
-    gap: 12px; /* controla espaço entre campos */
+    gap: 12px;
 }
 
 /* LABEL */
@@ -72,36 +99,33 @@ label {
     color: #800000;
 }
 
-/* INPUTS */
+/* INPUT BASE */
 input { 
     width: 100%;
     padding: 12px;
-
     border: 1px solid #ddd;
     border-radius: 8px;
-
     font-size: 16px;
     outline: none;
-
     transition: 0.3s;
 }
 
+/* FOCO */
 input:focus {
     border-color: #ff4d4d;
     box-shadow: 0 0 6px rgba(255, 77, 77, 0.4);
 }
 
-/* DATE */
-input[type="date"] {
-    width: 100%;
-    font-size: 16px;
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    cursor: pointer;
+/* ===== VALIDAÇÃO VISUAL (IMPORTANTE PRO JS) ===== */
+input.valid {
+    border: 2px solid #2ecc71 !important;
 }
 
-/* 🚨 ERRO INTELIGENTE */
+input.invalid {
+    border: 2px solid #e74c3c !important;
+}
+
+/* ERRO CELULAR */
 #erro {
     margin: 0;
     font-size: 14px;
@@ -114,23 +138,18 @@ input[type="date"] {
 button { 
     width: 100%;
     padding: 12px;  
-
     border: none;
     border-radius: 8px;
-
     background: linear-gradient(135deg, #ff4d4d, #cc0000);
     color: #ffffff;
-
     font-size: 18px;
     font-weight: bold;
-
     cursor: pointer;
     transition: 0.3s;
 }
 
 button:hover { 
     transform: scale(1.05);
-    opacity: 0.95;
 }
 
 /* RESPONSIVO */
@@ -147,25 +166,5 @@ button:hover {
 
     .header h1 {
         font-size: 22px;
-    }
-
-    input {
-        font-size: 16px;
-        padding: 14px;
-    }
-
-    button {
-        font-size: 16px;
-        padding: 14px;
-    }
-}
-
-@media (max-width: 400px) { 
-    .form-box { 
-        padding: 15px;
-    }
-
-    .header h1 {
-        font-size: 20px;
     }
 }
