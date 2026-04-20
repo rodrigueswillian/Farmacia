@@ -10,6 +10,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const inputData = document.getElementById("date");
   const erro = document.getElementById("erro");
 
+  const dialogSucesso = document.querySelector("#dialogSucesso");
+  const btnFechar = document.querySelector("#btnFechar");
+
   const anoMax = new Date().getFullYear() - 10;
   inputData.max = `${anoMax}-12-31`;
 
@@ -26,7 +29,6 @@ document.addEventListener("DOMContentLoaded", function () {
     '91','92','93','94','95','96','97','98','99'
   ];
 
-  // 🎨 validação visual
   function setValid(input, ok) {
     input.style.border = ok ? "2px solid green" : "2px solid red";
   }
@@ -71,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
     setValid(inputData, !isNaN(ano) && ano <= anoMax);
   });
 
-  // 📱 CELULAR (já corrigido)
+  // 📱 CELULAR (NÃO MEXIDO)
   celular.addEventListener("input", function (e) {
     let numeros = e.target.value.replace(/\D/g, "");
 
@@ -108,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // 🧾 SUBMIT FINAL
+  // 🧾 SUBMIT FINAL (SÓ MODAL AQUI)
   form.addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -144,7 +146,16 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    alert("Cadastro realizado com sucesso 🚀");
+    // 🚀 TROCA AQUI: alert removido
+    dialogSucesso.showModal();
+  });
+
+  // 🔘 FECHAR MODAL → LOGIN
+  btnFechar.addEventListener("click", function () {
+    dialogSucesso.close();
+  });
+
+  dialogSucesso.addEventListener("close", function () {
     window.location.href = "login.html";
   });
 
