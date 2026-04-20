@@ -6,8 +6,6 @@
     <title>Cadastro</title>
 
     <link rel="stylesheet" href="cadastro.css">
-
-    <!-- JS com defer (correto) -->
     <script src="cadastro.js" defer></script>
 </head>
 
@@ -25,39 +23,26 @@
             <!-- FORMULÁRIO -->
             <form id="formCadastro">
 
-                <!-- NOME -->
                 <label for="nome">Nome Completo*</label>
                 <input type="text" id="nome" required>
 
-                <!-- DATA NASCIMENTO -->
                 <label for="date">Data de nascimento*</label>
                 <input type="date" id="date" required>
 
-                <!-- CELULAR -->
                 <label for="celular">Celular*</label>
-                <input 
-                    type="tel" 
-                    id="celular" 
-                    placeholder="+55 21 91234-5678"
-                    required
-                >
+                <input type="tel" id="celular" placeholder="+55 21 91234-5678" required>
 
-                <!-- ERRO CELULAR -->
                 <p id="erro" class="erro-msg"></p>
 
-                <!-- EMAIL -->
                 <label for="email">Email*</label>
                 <input type="email" id="email" required>
 
-                <!-- SENHA -->
                 <label for="senha">Crie uma senha*</label>
                 <input type="password" id="senha" required>
 
-                <!-- CONFIRMAR SENHA -->
                 <label for="confirmarSenha">Confirme sua senha*</label>
                 <input type="password" id="confirmarSenha" required>
 
-                <!-- BOTÃO -->
                 <button type="submit" id="btnCadastro">
                     Cadastrar
                 </button>
@@ -66,6 +51,18 @@
 
         </div>
     </div>
+
+    <!-- ===== MODAL ===== -->
+    <dialog id="dialogSucesso">
+        <div class="modal-content">
+            <h2>Sucesso!</h2>
+            <p>Cadastro realizado com sucesso!</p>
+
+            <button id="btnFechar" type="button">
+                Fechar
+            </button>
+        </div>
+    </dialog>
 
 </body>
 </html>
