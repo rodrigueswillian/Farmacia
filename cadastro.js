@@ -147,6 +147,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // 🚀 TROCA AQUI: alert removido
+    // Salvar dados no localStorage
+    const usuario = {
+      nome: nome,
+      email: email,
+      senha: senha,
+      celular: celularValor,
+      dataNascimento: date
+    };
+    localStorage.setItem('usuario', JSON.stringify(usuario));
+
     dialogSucesso.showModal();
   });
 
