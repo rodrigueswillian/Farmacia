@@ -153,6 +153,40 @@ button:hover {
 }
 
 /* RESPONSIVO */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    .form-box {
+        width: 95%;
+        padding: 25px;
+    }
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+    label {
+        font-size: 14px;
+    }
+
+    input {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    dialog {
+        width: 280px;
+        padding: 20px;
+    }
+}
+
 @media (max-width: 600px) { 
     body {
         padding: 10px;
@@ -166,5 +200,53 @@ button:hover {
 
     .header h1 {
         font-size: 22px;
+    }
+
+    label {
+        font-size: 14px;
+    }
+
+    input {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    dialog {
+        width: 250px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-box {
+        padding: 15px;
+    }
+
+    .header h1 {
+        font-size: 20px;
+    }
+
+    label {
+        font-size: 12px;
+    }
+
+    input {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    button {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    dialog {
+        width: 220px;
+        padding: 12px;
     }
 }
