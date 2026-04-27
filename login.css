@@ -31,7 +31,8 @@ font-size: large;
     border: 3px solid #fff; 
     padding: 50px;
     border-radius: 10px;
-    width: 300px;
+    width: 100%;
+    max-width: 400px;
     text-align: center;
 }
 
@@ -97,6 +98,112 @@ font-size: large;
     color: white;
     width: 100%;
   }
+
+/* Modal styles */
+dialog {
+    border: none;
+    border-radius: 12px;
+    padding: 25px;
+    width: 320px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    animation: pop 0.2s ease-in-out;
+}
+
+@keyframes pop {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+dialog h3 {
+    color: #255E6D;
+    margin-bottom: 10px;
+}
+
+dialog p {
+    margin-bottom: 20px;
+}
+
+dialog button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    background: #255E6D;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+dialog button:hover {
+    background: #3B91A9;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .login-container {
+        width: 90%;
+        padding: 30px;
+    }
+
+    .titulo-login {
+        font-size: 1.5em;
+    }
+
+    label {
+        font-size: medium;
+    }
+
+    #login, #senha {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    #botao-acessar, #botao-primeiro-acesso {
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .titulo-login {
+        font-size: 1.2em;
+        margin-bottom: 15px;
+    }
+
+    label {
+        font-size: small;
+    }
+
+    #login, #senha {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    #botao-acessar, #botao-primeiro-acesso {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    dialog {
+        width: 280px;
+        padding: 20px;
+    }
+}
 
   @media (max-width:400px) { 
     .login-box { 
