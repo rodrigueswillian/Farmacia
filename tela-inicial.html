@@ -12,6 +12,10 @@
 
     <header class="topo">
         <h1>🔒 ShockLoud Segurança</h1>
+        <div class="user-info">
+            <div id="usuario-logado"></div>
+            <button id="logout-btn">Sair</button>
+        </div>
     </header>
 
     <main class="caixa-externa">
@@ -37,6 +41,13 @@
         <p>📧 Email: contato@shockloud.com</p>
         <p>© 2026 ShockLoudSegurança</p>
     </footer>
+
+    <!-- Modal de Erro na Pesquisa -->
+    <dialog id="modalErroPesquisa">
+        <h3>Nenhuma página encontrada</h3>
+        <p>Não encontramos uma página para essa busca. Tente palavras como "queimadura" ou "tratamento".</p>
+        <button id="btnFecharErroPesquisa">Fechar</button>
+    </dialog>
 
     <!-- SCRIPT SEMPRE NO FINAL -->
     <script src="tela-inicial.js"></script>
