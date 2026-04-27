@@ -15,6 +15,15 @@ label {
     color: white;
     text-align: center;
     padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .caixa-pesquisa {
@@ -124,4 +133,191 @@ h2 {
     text-align: center;
     padding: 20px;
     margin-top: 20px;
+}
+
+/* Estilos para usuário logado e logout */
+#usuario-logado {
+    font-size: 14px;
+    color: #fff;
+}
+
+#logout-btn {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+#logout-btn:hover {
+    background-color: #cc0000;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .topo {
+        padding: 10px;
+    }
+
+    .topo h1 {
+        font-size: 1.5em;
+    }
+
+    .user-info {
+        gap: 8px;
+    }
+
+    #usuario-logado {
+        font-size: 12px;
+    }
+
+    #logout-btn {
+        padding: 5px 8px;
+        font-size: 11px;
+    }
+
+    .caixa-externa {
+        padding: 15px;
+    }
+
+    .form-container {
+        padding: 20px;
+        max-width: 350px;
+    }
+
+    .caixa-pesquisa {
+        max-width: 100%;
+        padding: 8px 12px;
+    }
+
+    #pedido {
+        padding: 8px;
+    }
+
+    #enviar {
+        padding: 8px 12px;
+    }
+
+    #botao-tela-principal {
+        padding: 10px;
+    }
+
+    .rodape {
+        padding: 15px;
+    }
+
+    #usuario-logado {
+        font-size: 14px;
+    }
+
+    #logout-btn {
+        padding: 6px 10px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .topo h1 {
+        font-size: 1.2em;
+    }
+
+    .user-info {
+        gap: 5px;
+    }
+
+    #usuario-logado {
+        font-size: 10px;
+    }
+
+    #logout-btn {
+        padding: 4px 6px;
+        font-size: 10px;
+    }
+
+    .form-container {
+        padding: 15px;
+        max-width: 300px;
+    }
+
+    .caixa-pesquisa {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    #pedido {
+        width: 100%;
+    }
+
+    #enviar {
+        width: 100%;
+    }
+
+    #botao-tela-principal {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .rodape {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    #usuario-logado {
+        font-size: 12px;
+    }
+
+    #logout-btn {
+        padding: 5px 8px;
+        font-size: 12px;
+    }
+}
+/* Modal styles */
+dialog {
+    border: none;
+    border-radius: 12px;
+    padding: 25px;
+    width: 320px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    animation: pop 0.2s ease-in-out;
+}
+
+@keyframes pop {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+dialog h3 {
+    color: #0A2540;
+    margin-bottom: 10px;
+}
+
+dialog p {
+    margin-bottom: 20px;
+}
+
+dialog button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    background: #0A2540;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+dialog button:hover {
+    background: #163d66;
 }
