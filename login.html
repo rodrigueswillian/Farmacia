@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela de login</title>
     <link rel="stylesheet" href="login.css">
-    <script src="script.js"></script>
+    <script src="login.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -29,6 +29,20 @@
             </a>
             </div>          
             </form>
+            
+    <!-- Modal de Sucesso -->
+    <dialog id="modalSucesso">
+        <h3>Login realizado com sucesso!</h3>
+        <p>Redirecionando para a página inicial...</p>
+        <button id="btnFecharSucesso">OK</button>
+    </dialog>
+
+    <!-- Modal de Erro -->
+    <dialog id="modalErro">
+        <h3>Erro no login</h3>
+        <p>Email ou senha incorretos. Tente novamente.</p>
+        <button id="btnFecharErro">OK</button>
+    </dialog>
             
 </body>
 </html>
