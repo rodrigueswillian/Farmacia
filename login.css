@@ -1,103 +1,106 @@
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background:#255E6D;
+    background: linear-gradient(135deg, #0A2540 0%, #0A2540 100%);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    padding: 20px;
 }
 
-.titulo-login { 
-  text-align: center;
-  margin-bottom: 20px;
-  color: white;
+.titulo-login {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 0;
+    color: #0A2540;
+    font-size: 2em;
 }
 
-.container { 
-align-items: center;
-flex-direction: column;
+.container {
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    max-width: 420px;
 }
 
-label { 
-text-align: left;
-color:#fff;
-font-size: large;
+label {
+    display: block;
+    text-align: left;
+    color: #0A2540;
+    font-size: large;
 }
 
-.login-container { 
-    background: #255E6D;
-    background-color: #255E6D;
-    border: 3px solid #fff; 
-    padding: 50px;
-    border-radius: 10px;
+.login-container {
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid rgba(10, 37, 64, 0.18);
+    padding: 40px;
+    border-radius: 18px;
     width: 100%;
     max-width: 400px;
-    text-align: center;
+    text-align: left;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
 }
 
 .login-form {
     display: flex;
     flex-direction: column;
-    gap: 15;
+    gap: 15px;
+    align-items: flex-start;
 }
 
-#login {
-    border: none;
+.login-container a {
+    display: block;
+    width: 100%;
+}
+
+#login,
+#senha {
+    display: block;
+    border: 1px solid #d9e6ef;
     border-radius: 20px;
     padding: 15px;
-    text-align:left;
+    text-align: left;
     font-size: 16px;
- }
+    width: 100%;
+    background: #f7fbff;
+    color: #0A2540;
+    box-sizing: border-box;
+}
 
- #senha {
-    border: none;
-    border-radius: 20px;
-    padding: 15px;
-    text-align:left;
-    font-size: 16px;
- }
-
- #botao-acessar {
+#botao-acessar,
+#botao-primeiro-acesso {
     border: none;
     border-radius: 20px;
     padding: 15px;
     font-size: 16px;
     cursor: pointer;
     font-weight: bold;
-  }
-
-  #botao-primeiro-acesso {
-    border: none;
-    border-radius: 20px;
-    padding: 15px;
-    font-size: 16px;
-    cursor: pointer;
-    font-weight: bold;
-  }
-
-  #botao-acessar:hover { 
-    background-color: #9aebff;
-    color: #fff;
-  }
-
-  #botao-primeiro-acesso:hover {
-    background-color: #9aebff;
-    color: #fff;
-  } 
-
-  #botao-acessar {
-    background: #3B91A9;
-    color: white;
     width: 100%;
-  }
+    transition: 0.3s;
+}
 
-  #botao-primeiro-acesso {
-    background: #255E6D;
-    border: 1px solid white;
+#botao-acessar {
+    background: linear-gradient(135deg, #4A90E2, #0A2540);
     color: white;
-    width: 100%;
-  }
+}
+
+#botao-primeiro-acesso {
+    background: #ffffff;
+    color: #0A2540;
+    border: 2px solid #255E6D;
+}
+
+#botao-acessar:hover {
+    background: #0A2540;
+}
+
+#botao-primeiro-acesso:hover {
+    background: #133d66;
+    color: white;
+}
 
 /* Modal styles */
 dialog {
@@ -138,7 +141,7 @@ dialog button {
     padding: 10px 15px;
     border: none;
     border-radius: 8px;
-    background: #255E6D;
+    background: linear-gradient(135deg, #3B91A9, #255E6D);
     color: white;
     font-weight: bold;
     cursor: pointer;
