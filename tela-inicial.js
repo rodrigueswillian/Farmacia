@@ -41,25 +41,30 @@ document.addEventListener("DOMContentLoaded", function () {
   // Função de pesquisa (funciona com ou sem login)
   function pesquisar() {
     let input = document.getElementById("pedido").value.toLowerCase();
+    //Tratamento para queimadura (variações)
     if (
-        input.includes("tratamento de queimadura") ||
-        input.includes("tratamento para queimadura") ||
-        input.includes("tratamento queimadura") ||
-        (input.includes("tratamento") && input.includes("queimadura"))
+        input.includes("tratamento para queimadura") &&  input.includes("tratamento de queimadura") &&
+        input.includes("tratamento queimadura")
       ) {
-        window.location.href = "tratamentoqueimadura.html";
+         //Tratamento( Genérico e específico)
+      } else if(
+        input.includes("tratamento")
+      ){
+           window.location.href = "tratamentoqueimadura.html";
 
-      // QUEIMADURA (genérico depois)
+           // QUEIMADURA (genérico e específico)
       } else if (
         input.includes("queimadura")
       ) {
         window.location.href = "telaqueimadura.html";
 
-      // TRATAMENTO (sozinho)
+      // Autismo 
       } else if (
-        input.includes("tratamento")
+       input.includes("autismo") || input.includes("tratamento de autismo") || 
+       input.includes("tratamento para autismo") && input.includes("tratamento autismo") 
+      
       ) {
-        window.location.href = "tratamentoqueimadura.html";
+        window.location.href = "autismo.html";
 
       } else {
         // Mostrar modal de erro em vez de alert
@@ -67,6 +72,8 @@ document.addEventListener("DOMContentLoaded", function () {
         modalErro.showModal();
       }
     }
+    
+  
 
     // Fechar modal de erro
     const btnFecharErro = document.getElementById("btnFecharErroPesquisa");
