@@ -9,26 +9,18 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="titulo-login"> Acesso a conta </h1>
-    <div class="login-container">
-        <form class="login-form">
-            <label> Email </label>
-            <br>
-            <input id="login" type="text" placeholder="Digite seu email">
-            <br>
-            <label> Senha </label>
-            <br> 
-            <input id="senha" type="password" placeholder="********">
-            <br>
-            <a href="tela-inicial.html"> 
-            <button type="button" id="botao-acessar">Acessar</button>
-            </a>
-            <br>
-            <a href="cadastro.html"> 
-            <button type="button" id="botao-primeiro-acesso">Primeiro Acesso</button>    
-            </a>
-            </div>          
+        <div class="login-container">
+            <h1 class="titulo-login"> Acesso a conta </h1>
+            <form class="login-form">
+                <label for="login">Email</label>
+                <input id="login" type="text" placeholder="Digite seu email">
+                <label for="senha">Senha</label>
+                <input id="senha" type="password" placeholder="********">
+                <a href="tela-inicial.html"><button type="button" id="botao-acessar">Acessar</button></a>
+                <a href="cadastro.html"><button type="button" id="botao-primeiro-acesso">Primeiro Acesso</button></a>
             </form>
+        </div>
+
             
     <!-- Modal de Sucesso -->
     <dialog id="modalSucesso">
