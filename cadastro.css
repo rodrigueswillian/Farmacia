@@ -5,11 +5,11 @@
 body { 
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     min-height: 100vh; 
     padding: 20px;
     margin: 0;
-    background: linear-gradient(135deg, #ffd6d6 0%, #ff4d4d 50%, #cc0000 100%);
+    background: linear-gradient(135deg, #0A2540 0%, #255E6D 100%);
 }
 
 /* ===== MODAL CORRIGIDO ===== */
@@ -39,7 +39,7 @@ dialog::backdrop {
 }
 
 .modal-content {
-    color: #cc0000;
+    color: #0A2540;
     font-weight: bold;
 }
 
@@ -48,10 +48,14 @@ dialog button {
     padding: 10px 15px;
     border: none;
     border-radius: 8px;
-    background: #cc0000;
+    background: #255E6D;
     color: white;
     font-weight: bold;
     cursor: pointer;
+}
+
+dialog button:hover {
+    background: #3B91A9;
 }
 
 /* ===== CONTAINER ===== */
@@ -69,7 +73,7 @@ dialog button {
     padding: 30px;
     width: 90%;          
     max-width: 400px;  
-    color: #800000;
+    color: #0A2540;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
 }
 
@@ -81,9 +85,38 @@ dialog button {
 }
 
 .back-arrow {
-    color: #ff4d4d;
-    font-size: 28px;
     text-decoration: none;
+    background: transparent;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.back-arrow span {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    clip-path: polygon(100% 50%, 0 0, 0 100%);
+    background: linear-gradient(135deg, #4A90E2, #0A2540);
+    transition: background 0.3s, transform 0.3s;
+}
+
+.back-arrow:hover {
+    transform: scale(1.1);
+}
+
+.back-arrow:hover span {
+    background: linear-gradient(135deg, #4A90E2, #0A2540);
+    transform: rotate(180deg);
+}
+
+h1 {
+    color: #0A2540;
+    margin: 0;
 }
 
 /* FORM */
@@ -96,7 +129,7 @@ form {
 /* LABEL */
 label { 
     font-size: 16px;
-    color: #800000;
+    color: #0A2540;
 }
 
 /* INPUT BASE */
@@ -112,8 +145,8 @@ input {
 
 /* FOCO */
 input:focus {
-    border-color: #ff4d4d;
-    box-shadow: 0 0 6px rgba(255, 77, 77, 0.4);
+    border-color: #3B91A9;
+    box-shadow: 0 0 6px rgba(59, 145, 169, 0.4);
 }
 
 /* ===== VALIDAÇÃO VISUAL (IMPORTANTE PRO JS) ===== */
@@ -140,7 +173,7 @@ button {
     padding: 12px;  
     border: none;
     border-radius: 8px;
-    background: linear-gradient(135deg, #ff4d4d, #cc0000);
+    background: linear-gradient(135deg, #4A90E2, #0A2540);
     color: #ffffff;
     font-size: 18px;
     font-weight: bold;
@@ -150,6 +183,7 @@ button {
 
 button:hover { 
     transform: scale(1.05);
+    background: #0A2540;
 }
 
 /* RESPONSIVO */
