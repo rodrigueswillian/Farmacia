@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engasgo - Emergência</title>
+  <link rel="stylesheet" href="engasgoadulto.css">
+  <script src="engasgoadulto.js"></script>
+</head>
+<body>
+
+<div class="app">
+
+  <header>
+    <h1>🆘 Engasgo</h1>
+    <p>Assistente de primeiros socorros</p>
+  </header>
+
+  <section id="tela">
+
+    <div class="card ativo" id="inicio">
+      <img src="https://cdn-icons-png.flaticon.com/512/2966/2966327.png" class="icone">
+      <p>O engasgo bloqueia a passagem de ar e pode ser fatal.</p>
+      <button class="btn" onclick="trocarTela('p1')">Iniciar</button>
+      <button class="btn" onclick="window.location.href='telainicial-engasgo.html'">Voltar</button>
+    </div>
+
+    <!-- PERGUNTA -->
+    <div class="card" id="p1">
+      <p class="pergunta">A pessoa consegue tossir, falar ou respirar?</p>
+
+      <div class="botoes">
+        <button class="btn verde" onclick="mostrarResultado('leve')">Sim</button>
+        <button class="btn vermelho" onclick="mostrarResultado('grave')">Não</button>
+      </div>
+    </div>
+
+    
+    <div class="card" id="resultado"></div>
+
+  </section>
+
+</div>
+</body>
+</html>
