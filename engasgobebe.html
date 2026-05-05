@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engasgo em Bebê</title>
+  <link rel="stylesheet" href="engasgobebe.css">
+  <script src="engasgobebe.js"></script>
+</head>
+<body>
+
+<div class="app">
+
+  <header>
+    <h1>Engasgo em Bebê</h1>
+    <p>Primeiros socorros (até 1 ano)</p>
+  </header>
+
+  <section>
+
+    <div class="card ativo" id="inicio">
+      <img src="https://cdn-icons-png.flaticon.com/512/2966/2966488.png" class="icone">
+      <p>Engasgo em bebê pode ser grave. A ação deve ser rápida e correta.</p>
+      <button class="btn" onclick="trocarTela('p1')">Iniciar</button>
+    </div>
+
+    <!-- PERGUNTA -->
+    <div class="card" id="p1">
+      <p class="pergunta">O bebê está tossindo ou chorando?</p>
+
+      <div class="botoes">
+        <button class="btn verde" onclick="resultado('leve')">Sim</button>
+        <button class="btn vermelho" onclick="resultado('grave')">Não</button>
+      </div>
+    </div>
+
+    <!-- RESULTADO -->
+    <div class="card" id="resultado"></div>
+
+  </section>
+
+</div>
+
+</body>
+</html>
