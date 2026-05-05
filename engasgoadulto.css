@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #ff3b3b, #ff7a7a);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+.app {
+  background: white;
+  width: 370px;
+  border-radius: 25px;
+  padding: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  margin: 0;
+}
+
+header p {
+  color: #666;
+  font-size: 14px;
+}
+
+.card {
+  display: none;
+  text-align: center;
+  animation: fade 0.3s ease;
+}
+
+.card.ativo {
+  display: block;
+}
+
+.icone {
+  width: 80px;
+  margin-bottom: 10px;
+}
+
+
+.pergunta {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 12px;
+  width: 100%;
+  margin-top: 15px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.botoes {
+  display: flex;
+  gap: 10px;
+}
+
+.verde {
+  background: #28a745;
+}
+
+.vermelho {
+  background: #dc3545;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* RESULTADO */
+.sucesso {
+  color: #28a745;
+}
+
+.perigo {
+  color: #dc3545;
+}
+
+.lista {
+  text-align: left;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* ANIMAÇÃO */
+@keyframes fade {
+  from {opacity: 0; transform: translateY(10px);}
+  to {opacity: 1; transform: translateY(0);}
+}
