@@ -1,38 +1,42 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #ff3b3b, #ff7a7a);
+  background: linear-gradient(135deg, #0a2540 0%, #0a2540f5 100%);
   color: #333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.container {
-  max-width: 500px;
-  margin: auto;
-  padding: 20px;
+  font-family: 'Segoe UI', Arial, sans-serif;
 }
 
 header {
+  background-color: rgb(236, 235, 235);
   text-align: center;
-  color: white;
-  margin-bottom: 20px;
+  color: black;
+  padding: 1px;
+}
+
+.container {
+  width: 100%;
+  margin: 50px auto;
+  padding: 20px;
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
 }
 
 h1 {
   margin: 0;
   font-size: 28px;
-  color: white;
+  color: black;
   }
 
 .card {
   background: white;
-  padding: 15px;
+  padding: 20px;
   border-radius: 15px;
   margin-bottom: 15px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  width: 350px;
 }
 
 h2 {
@@ -45,6 +49,7 @@ h2 {
 .acoes {
   text-align: center;
   color: black;
+  margin-top: 20px;
 }
 
 button {
