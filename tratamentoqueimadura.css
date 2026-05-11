@@ -10,6 +10,69 @@ body {
   color: #333;
 }
 
+/* =========================
+   MENU
+========================= */
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: linear-gradient(135deg, #0A2540, #163d66);
+
+  padding: 15px 40px;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.logo {
+  font-size: 28px;
+  color: white;
+  font-weight: bold;
+}
+
+/* CAIXA BRANCA DOS LINKS */
+.menu-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+
+  background-color: white;
+
+  padding: 12px 20px;
+
+  border-radius: 12px;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.menu-links li {
+  list-style: none;
+}
+
+.menu-links a {
+  text-decoration: none;
+
+  color: #0A2540;
+
+  font-weight: 600;
+
+  padding: 10px 15px;
+
+  border-radius: 8px;
+
+  transition: 0.3s;
+}
+
+.menu-links a:hover {
+  background-color: #0A2540;
+  color: white;
+}
+
+/* =========================
+   HEADER (conteúdo da página)
+========================= */
 
 header {
   text-align: center;
@@ -28,6 +91,9 @@ header p {
   opacity: 0.9;
 }
 
+/* =========================
+   CONTAINER
+========================= */
 
 .container {
   display: flex;
@@ -49,12 +115,11 @@ header p {
   overflow: hidden;
 }
 
-/* HOVER */
 .leve:hover, .media:hover, .grave:hover {
   transform: translateY(-10px) scale(1.03);
 }
 
-/* CORES + BORDA */
+/* CORES */
 .leve {
   background: #d4edda;
   border-left: 6px solid #28a745;
@@ -70,7 +135,7 @@ header p {
   border-left: 6px solid #dc3545;
 }
 
-/* TÍTULO DOS CARDS */
+/* TITULOS */
 .leve h2, .media h2, .grave h2 {
   margin-bottom: 10px;
 }
@@ -87,7 +152,6 @@ li {
   position: relative;
 }
 
-/* Ícone fake */
 li::before {
   content: "•";
   position: absolute;
@@ -96,6 +160,9 @@ li::before {
   font-weight: bold;
 }
 
+/* =========================
+   FOOTER
+========================= */
 
 footer {
   text-align: center;
@@ -104,76 +171,80 @@ footer {
   color: white;
 }
 
-/* Responsividade */
+/* =========================
+   RESPONSIVO TABLET
+========================= */
+
 @media (max-width: 768px) {
-    header {
-        padding: 30px 15px;
-    }
 
-    header h1 {
-        font-size: 1.8rem;
-    }
+  .menu {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+  }
 
-    header p {
-        font-size: 14px;
-    }
+  .menu-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-    .container {
-        gap: 20px;
-        padding: 30px 15px;
-    }
+  header {
+    padding: 30px 15px;
+  }
 
-    .leve, .media, .grave {
-        width: 250px;
-        padding: 20px;
-    }
+  header h1 {
+    font-size: 1.8rem;
+  }
 
-    .leve h2, .media h2, .grave h2 {
-        font-size: 1.2rem;
-    }
+  .container {
+    gap: 20px;
+    padding: 30px 15px;
+  }
 
-    li {
-        font-size: 14px;
-    }
+  .leve, .media, .grave {
+    width: 250px;
+    padding: 20px;
+  }
 }
 
+/* =========================
+   RESPONSIVO CELULAR
+========================= */
+
 @media (max-width: 480px) {
-    header {
-        padding: 20px 10px;
-    }
 
-    header h1 {
-        font-size: 1.5rem;
-    }
+  .menu-links {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
 
-    header p {
-        font-size: 12px;
-    }
+  .menu-links a {
+    width: 100%;
+    text-align: center;
+  }
 
-    .container {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-        padding: 20px 10px;
-    }
+  header {
+    padding: 20px 10px;
+  }
 
-    .leve, .media, .grave {
-        width: 90%;
-        max-width: 300px;
-        padding: 15px;
-    }
+  header h1 {
+    font-size: 1.5rem;
+  }
 
-    .leve h2, .media h2, .grave h2 {
-        font-size: 1.1rem;
-    }
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
 
-    li {
-        font-size: 12px;
-        margin: 8px 0;
-    }
+  .leve, .media, .grave {
+    width: 90%;
+    max-width: 300px;
+  }
 
-    footer {
-        padding: 15px;
-        font-size: 14px;
-    }
+  footer {
+    padding: 15px;
+    font-size: 14px;
+  }
 }
