@@ -39,39 +39,87 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Função de pesquisa (funciona com ou sem login)
-  function pesquisar() {
-    let input = document.getElementById("pedido").value.toLowerCase();
-    //Tratamento para queimadura (variações)
-    if (
-        input.includes("tratamento para queimadura") &&  input.includes("tratamento de queimadura") &&
-        input.includes("tratamento queimadura")
-      ) {
-         //Tratamento( Genérico e específico)
-      } else if(
-        input.includes("tratamento")
-      ){
-           window.location.href = "tratamentoqueimadura.html";
+function pesquisar() {
 
-           // QUEIMADURA (genérico e específico)
-      } else if (
-        input.includes("queimadura")
-      ) {
-        window.location.href = "telaqueimadura.html";
+  // Pega o texto digitado e transforma em minúsculo
+  const input = document
+    .getElementById("pedido")
+    .value
+    .toLowerCase();
 
-      // Autismo 
-      } else if (
-       input.includes("autismo") || input.includes("tratamento de autismo") || 
-       input.includes("tratamento para autismo") && input.includes("tratamento autismo") 
-      
-      ) {
-        window.location.href = "autismo.html";
+  // Lista de pesquisas
+  const pesquisas = [
 
-      } else {
-        // Mostrar modal de erro em vez de alert
-        const modalErro = document.getElementById("modalErroPesquisa");
-        modalErro.showModal();
-      }
+    // =========================
+    // ENGASGO
+    // =========================
+    {
+      verificar: texto =>
+        texto.includes("tratamento") &&
+        texto.includes("engasgo"),
+
+      pagina: "telainicial-engasgo.html"
+    },
+
+    {
+      verificar: texto =>
+        texto.includes("engasgo"),
+
+      pagina: "telainicial-engasgo.html"
+    },
+
+    // =========================
+    // QUEIMADURA
+    // =========================
+    {
+      verificar: texto =>
+        texto.includes("tratamento") &&
+        texto.includes("queimadura"),
+
+      pagina: "tratamentoqueimadura.html"
+    },
+
+    {
+      verificar: texto =>
+        texto.includes("queimadura"),
+
+      pagina: "telaqueimadura.html"
+    },
+
+    // =========================
+    // AUTISMO
+    // =========================
+    {
+      verificar: texto =>
+        texto.includes("tratamento") &&
+        texto.includes("autismo"),
+
+      pagina: "autismo.html"
+    },
+
+    {
+      verificar: texto =>
+        texto.includes("autismo"),
+
+      pagina: "autismo.html"
     }
+
+  ];
+
+  // Procura a primeira condição verdadeira
+  const resultado = pesquisas.find(item =>
+    item.verificar(input)
+  );
+
+  // Se encontrou, redireciona
+  resultado
+    ? window.location.href = resultado.pagina
+
+    // Senão, mostra o modal
+    : document
+        .getElementById("modalErroPesquisa")
+        .showModal();
+}
     
   
 
