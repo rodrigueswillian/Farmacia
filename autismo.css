@@ -5,13 +5,17 @@
   font-family: 'Segoe UI', Arial, sans-serif;
 }
 
+/* =========================
+   BODY (MANTIDO AZUL)
+========================= */
+
 body {
-  background-color: #f4f8fb;
-  color: #333;
+  background: #0b1f33;
+  color: #e8eef5;
 }
 
 /* =========================
-   HEADER ÚNICO (TÍTULO + MENU)
+   HEADER RAINBOW CONTROLADO
 ========================= */
 
 .menu {
@@ -24,49 +28,52 @@ body {
     #6a4c93
   );
 
-  padding: 20px 40px;
+  padding: 30px 40px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  box-shadow: 0 4px 10px rgb(255, 255, 255);
-}
-h1 {
-color: white;
-}
-/* TÍTULO */
-.titulo {
-  color: white;
-
-  font-size: 38px;
-
-  margin-bottom: 15px;
-
   text-align: center;
 }
 
-/* MENU LINKS */
-.menu nav {
-  background: transparent;
+/* título */
+.menu h1 {
+  color: white;
+  margin-bottom: 20px;
 }
 
+/* =========================
+   MENU (SEM CAIXA BRANCA)
+========================= */
+
+.menu nav {
+  background: transparent;
+
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+}
+
+/* links container */
 .menu-links {
   display: flex;
   gap: 20px;
 
   list-style: none;
 
-  margin: 0;
-  padding: 0;
+  padding: 10px 15px;
 
-  background: transparent;
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.15);
+
+  backdrop-filter: blur(6px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
-.menu-links li {
-  background: transparent;
-}
-
+/* links */
 .menu-links a {
   text-decoration: none;
 
@@ -74,15 +81,36 @@ color: white;
 
   font-weight: 600;
 
-  padding: 10px 15px;
+  padding: 8px 12px;
 
   border-radius: 8px;
+
+  position: relative;
 
   transition: 0.3s;
 }
 
+/* hover linha */
+.menu-links a::after {
+  content: "";
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 0%;
+  height: 2px;
+
+  background: white;
+
+  transition: 0.3s;
+}
+
+.menu-links a:hover::after {
+  width: 100%;
+}
+
 .menu-links a:hover {
-  background-color: rgba(255,255,255,0.25);
   transform: translateY(-2px);
 }
 
@@ -90,60 +118,47 @@ color: white;
    CONTEÚDO
 ========================= */
 
-h2 {
-  color: #2c5d8a;
-  margin-top: 30px;
-  border-left: 5px solid #4A90E2;
-  padding-left: 10px;
+.container {
+  padding: 25px;
 }
 
-p {
-  line-height: 1.6;
-  font-size: 18px;
-  margin: 10px 20px;
-}
+.card {
+  background: #122a44;
 
-ul {
-  background-color: white;
-  padding: 20px 35px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  margin: 20px;
-}
+  padding: 20px;
+  margin: 20px 0;
 
-li {
-  margin-bottom: 10px;
-  font-size: 17px;
-}
+  border-radius: 14px;
 
-strong {
-  color: #1e4d74;
-}
-
-/* =========================
-   BOTÃO TOPO
-========================= */
-
-.botao-topo {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-
-  background-color: #1982c4;
-  color: white;
-
-  padding: 12px 18px;
-  border-radius: 10px;
-
-  text-decoration: none;
-  font-weight: bold;
-
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
 
   transition: 0.3s;
 }
 
-.botao-topo:hover {
-  background-color: #0f5f91;
-  transform: scale(1.05);
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+h2 {
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+h3 {
+  color: #d6e4f0;
+  margin-top: 15px;
+}
+
+p {
+  color: #d9e6f2;
+}
+
+li {
+  margin: 8px 0;
+  color: #e8eef5;
+}
+
+strong {
+  color: #ffffff;
 }
