@@ -1,3 +1,7 @@
+/* =========================
+   RESET
+========================= */
+
 * {
   margin: 0;
   padding: 0;
@@ -10,35 +14,66 @@ body {
 }
 
 /* =========================
-   MENU NOVO
+   HEADER AZUL
+========================= */
+
+.principal {
+  background: linear-gradient(135deg, #0A2540, #163d66);
+
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  padding: 60px 20px 30px;
+}
+
+/* TEXTO */
+.principaltexto {
+  max-width: 800px;
+  margin-bottom: 25px;
+}
+
+.principaltexto h1 {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+.principaltexto p {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+/* =========================
+   MENU
 ========================= */
 
 .menu {
+  width: 100%;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  background-color: #ffffff;
-
-  padding: 15px 40px;
-
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  justify-content: center;
 }
-
 
 .menu-links {
   display: flex;
-  list-style: none;
   gap: 20px;
-}
 
-.menu-links li {
   list-style: none;
+
+  background: white;
+
+  padding: 12px 20px;
+
+  border-radius: 12px;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 .menu-links a {
   text-decoration: none;
-
   color: #0A2540;
 
   font-weight: 600;
@@ -56,35 +91,6 @@ body {
 }
 
 /* =========================
-   PRINCIPAL
-========================= */
-
-.principal {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-
-  padding: 80px 50px;
-
-  background: linear-gradient(135deg, #0A2540, #163d66);
-
-  color: white;
-}
-
-.principaltexto {
-  max-width: 700px;
-}
-
-.principaltexto h1 {
-  font-size: 34px;
-  margin-bottom: 15px;
-}
-
-.principaltexto p {
-  margin-bottom: 20px;
-}
-
-/* =========================
    CARDS
 ========================= */
 
@@ -97,8 +103,8 @@ body {
   display: flex;
   justify-content: center;
   gap: 50px;
-  margin-top: 30px;
   flex-wrap: wrap;
+  margin-top: 30px;
 }
 
 .card {
@@ -113,59 +119,22 @@ body {
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 
   transition: 0.3s;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 .card:hover {
   transform: translateY(-10px) scale(1.02);
 }
 
-/* CORES */
-
-.card:nth-child(1) {
-  border-top: 5px solid #28a745;
-  border-bottom: 5px solid #28a745;
-}
-
-.card:nth-child(2) {
-  border-top: 5px solid #ffc107;
-  border-bottom: 5px solid #ffc107;
-}
-
-.card:nth-child(3) {
-  border-top: 5px solid #dc3545;
-  border-bottom: 5px solid #dc3545;
-}
-
-/* IMAGEM */
-
 .card img {
   width: 100%;
-  height: auto;
-
   border-radius: 10px;
-
   margin-top: 10px;
-
-  transition: 0.3s;
 }
 
-.card:hover img {
-  transform: scale(1.05);
-}
-
-/* TEXTO */
-
-.card h3 {
-  margin-bottom: 8px;
-}
-
-.card p {
-  font-size: 0.95rem;
-}
+/* CORES */
+.card:nth-child(1) { border-top: 5px solid #28a745; }
+.card:nth-child(2) { border-top: 5px solid #ffc107; }
+.card:nth-child(3) { border-top: 5px solid #dc3545; }
 
 /* =========================
    QUIZ
@@ -186,7 +155,6 @@ body {
   color: white;
 
   border: none;
-
   border-radius: 8px;
 
   cursor: pointer;
@@ -196,6 +164,20 @@ body {
 
 .quiz button:hover {
   background-color: #163d66;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  background-color: #0A2540;
+  color: white;
+
+  text-align: center;
+
+  padding: 20px;
+  margin-top: 40px;
 }
 
 /* =========================
@@ -228,87 +210,62 @@ body {
 
   border-radius: 15px;
 
-  text-align: center;
-
   width: 300px;
 
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  text-align: center;
 
   animation: aparecer 0.3s ease;
 }
 
-.modal-box h3 {
-  margin-bottom: 15px;
+@keyframes aparecer {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
 
-.modal-box p {
-  margin-bottom: 20px;
-}
+/* =========================
+   BOTÕES SIM / NÃO (IGUAIS)
+========================= */
 
 .modal-box button {
-  margin: 5px;
+  padding: 14px 22px;
 
-  padding: 10px 15px;
+  border-radius: 20px;
 
-  border: none;
-
-  border-radius: 8px;
-
-  background: #0A2540;
-
-  color: white;
+  font-size: 16px;
+  font-weight: bold;
 
   cursor: pointer;
 
   transition: 0.3s;
+
+  border: 2px solid #0A2540;
+
+  min-width: 120px;
+
+  box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+
+  margin: 8px;
+
+  background: white;
+  color: #0A2540;
 }
 
+/* HOVER PADRÃO (AMBOS) */
 .modal-box button:hover {
-  background: #163d66;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-  background-color: #0A2540;
-
+  background: #0A2540;
   color: white;
 
-  text-align: center;
-
-  padding: 20px;
-
-  margin-top: 40px;
+  transform: translateY(-2px);
 }
 
 /* =========================
-   ANIMAÇÃO
-========================= */
-
-@keyframes aparecer {
-  from {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-/* =========================
-   RESPONSIVIDADE TABLET
+   RESPONSIVO
 ========================= */
 
 @media (max-width: 768px) {
 
-  .menu {
-    flex-direction: column;
-    gap: 15px;
-    padding: 20px;
+  .principaltexto h1 {
+    font-size: 28px;
   }
 
   .menu-links {
@@ -316,89 +273,23 @@ footer {
     justify-content: center;
   }
 
-  .principal {
-    padding: 40px 20px;
-    text-align: center;
-  }
-
-  .principaltexto h1 {
-    font-size: 28px;
-  }
-
-  .principaltexto p {
-    font-size: 14px;
-  }
-
-  .card-container {
-    gap: 20px;
-  }
-
   .card {
     width: 220px;
   }
-
-  .modal-box {
-    width: 260px;
-  }
 }
 
-/* =========================
-   RESPONSIVIDADE CELULAR
-========================= */
-
 @media (max-width: 480px) {
-
-  .menu {
-    padding: 15px;
-  }
 
   .menu-links {
     flex-direction: column;
     align-items: center;
-    width: 100%;
-  }
-
-  .menu-links a {
-    width: 100%;
-    text-align: center;
-  }
-
-  .principal {
-    padding: 30px 15px;
-  }
-
-  .principaltexto h1 {
-    font-size: 24px;
-  }
-
-  .principaltexto p {
-    font-size: 13px;
-  }
-
-  .card-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
   }
 
   .card {
     width: 90%;
-    max-width: 320px;
   }
 
-  .cards {
-    padding: 30px 10px;
-  }
-
-  .quiz {
-    padding: 30px 10px;
-  }
-
-  footer {
-    font-size: 14px;
-  }
-
-  .modal-box {
-    width: 90%;
+  .principaltexto h1 {
+    font-size: 24px;
   }
 }
