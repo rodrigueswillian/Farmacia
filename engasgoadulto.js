@@ -3,7 +3,6 @@ function trocarTela(id) {
   document.getElementById(id).classList.add("ativo");
 }
 
-
 function mostrarResultado(tipo) {
   trocarTela("resultado");
 
@@ -17,15 +16,19 @@ function mostrarResultado(tipo) {
       <div class="lista">
         ✔️ Incentive a tossir<br>
         ✔️ Não bata nas costas com força<br>
-        ✔️ Observe até melhorar
+        ✔️ Faça a manobra de Heimlich<br>
       </div>
+
+      <button class="btn" onclick="trocarTela('inicio')">Voltar</button>
     `;
   }
 
   if (tipo === "grave") {
     r.innerHTML = `
       <h2 class="perigo">🔴 Engasgo grave</h2>
-      <p><strong>Risco de morte!</strong></p>
+      <p><strong>Acione a emergência!</strong></p>
+
+      <button class="btn" onclick="trocarTela('inicio')">Voltar</button>
     `;
   }
 }
