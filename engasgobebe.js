@@ -12,20 +12,24 @@ function mostrarResultado(tipo) {
   if (tipo === "leve") {
     r.innerHTML = `
       <h2 class="sucesso">🟢 Engasgo leve</h2>
-      <p>A pessoa ainda consegue respirar.</p>
+      <p>O bebê ainda consegue respirar.</p>
 
       <div class="lista">
         ✔️ Incentive a tossir<br>
         ✔️ Não bata nas costas com força<br>
         ✔️ Observe até melhorar
       </div>
+
+      <button class="btn" onclick="trocarTela('inicio')">Voltar</button>
     `;
   }
 
   if (tipo === "grave") {
     r.innerHTML = `
       <h2 class="perigo">🔴 Engasgo grave</h2>
-      <p><strong>Risco de morte!</strong></p>
+      <p><strong>Acione a emergência!</strong></p>
+
+      <button class="btn" onclick="trocarTela('inicio')">Voltar</button>
     `;
   }
 }
