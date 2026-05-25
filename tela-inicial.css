@@ -13,11 +13,33 @@ label {
 .topo {
     background-color: #0A2540;
     color: white;
-    text-align: center;
-    padding: 15px;
+    padding: 18px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
+    padding-right: 14rem; /* espaço para o painel de controles */
+}
+
+.app-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+    background: rgba(255, 255, 255, 0.12);
+    padding: 10px 14px;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.app-icon {
+    display: inline-flex;
+    width: 2.4rem;
+    height: 2.4rem;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    font-size: 1.3rem;
 }
 
 .user-info {
@@ -26,15 +48,40 @@ label {
     gap: 10px;
 }
 
+.user-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.16);
+    padding: 9px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    font-size: 0.95rem;
+}
+
+.user-avatar {
+    display: inline-flex;
+    width: 2rem;
+    height: 2rem;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.22);
+    border-radius: 50%;
+}
+
+/* Override de tema: garante que containers usem a superfície do tema (modo claro/escuro) */
+.form-container {
+    background: var(--surface, white) !important;
+    color: var(--text-color) !important;
+}
+
 .caixa-pesquisa {
     display: flex;
     gap: 10px;
     width: 100%;
-
     background: #f0f4f8;
     padding: 10px 15px;
     border-radius: 30px;
-
     max-width: 500px;
     border: 2px solid #0A2540;
 }
@@ -62,18 +109,15 @@ label {
 }
 
 .form-container {
-    background: white;
+    background: var(--surface, white);
     padding: 30px;
     border-radius: 15px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
-
     width: 90%;
     max-width: 400px;
-
     box-shadow: 0 0 20px rgba(0,0,0,0.2);
 }
 
@@ -91,8 +135,6 @@ h2 {
 }
 
 /*  BOTÃO PESQUISAR */
-
-
 #enviar {
     background-color: #0A2540;
     color: white;
@@ -107,8 +149,6 @@ h2 {
 }
 
 /*  BOTÃO CADASTRO */
-
-
 #botao-tela-principal {
     background-color: #0A2540;
     color: white;
@@ -122,10 +162,8 @@ h2 {
 }
 
 #botao-tela-principal:hover {
-    background-color:  #ff0000;
+    background-color: #ff0000;
 }
-
-
 
 .rodape {
     background-color: #0A2540;
@@ -141,18 +179,24 @@ h2 {
     color: #fff;
 }
 
-#logout-btn {
-    background-color: #ff0000;
+#logout-btn,
+.logout-button {
+    background-color: #ff3b3b;
     color: white;
     border: none;
-    padding: 6px 10px;
-    border-radius: 5px;
+    padding: 9px 14px;
+    border-radius: 999px;
     cursor: pointer;
-    font-size: 12px;
+    font-size: 13px;
+    font-weight: 700;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transition: background 0.2s ease, transform 0.2s ease;
 }
 
+.logout-button:hover,
 #logout-btn:hover {
     background-color: #cc0000;
+    transform: translateY(-1px);
 }
 
 /* Responsividade */
@@ -207,15 +251,6 @@ h2 {
     .rodape {
         padding: 15px;
     }
-
-    #usuario-logado {
-        font-size: 14px;
-    }
-
-    #logout-btn {
-        padding: 6px 10px;
-        font-size: 14px;
-    }
 }
 
 @media (max-width: 480px) {
@@ -263,662 +298,8 @@ h2 {
         padding: 10px;
         font-size: 14px;
     }
-
-    #usuario-logado {
-        font-size: 12px;
-    }
-
-    #logout-btn {
-        padding: 5px 8px;
-        font-size: 12px;
-    }
-}
-/* Modal styles */
-dialog {
-    border: none;
-    border-radius: 12px;
-    padding: 25px;
-    width: 320px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    animation: pop 0.2s ease-in-out;
 }
 
-@keyframes pop {
-    from {
-        transform: scale(0.9);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-dialog::backdrop {
-    background: rgba(0, 0, 0, 0.6);
-}
-
-dialog h3 {
-    color: #0A2540;
-    margin-bottom: 10px;
-}
-
-dialog p {
-    margin-bottom: 20px;
-}
-
-dialog button {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 8px;
-    background: #0A2540;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-dialog button:hover {
-    background: #163d66;
-}
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-label {
-    font-weight: bold;
-    color: #0A2540;
-    margin-bottom: 5px;
-}
-
-.topo {
-    background-color: #0A2540;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.user-info {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.caixa-pesquisa {
-    display: flex;
-    gap: 10px;
-    width: 100%;
-
-    background: #f0f4f8;
-    padding: 10px 15px;
-    border-radius: 30px;
-
-    max-width: 500px;
-    border: 2px solid #0A2540;
-}
-
-.legenda {
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #0A2540;
-    letter-spacing: 1px;
-}
-
-.caixa {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
-}
-
-.caixa-externa {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-.form-container {
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-
-    width: 90%;
-    max-width: 400px;
-
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
-}
-
-h2 {
-    color: #0A2540;
-}
-
-/*INPUT */
-#pedido {
-    flex: 1;
-    padding: 10px;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-}
-
-/*  BOTÃO PESQUISAR */
-
-
-#enviar {
-    background-color: #0A2540;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 25px;
-    cursor: pointer;
-}
-
-#enviar:hover {
-    background-color: #133d66;
-}
-
-/*  BOTÃO CADASTRO */
-
-
-#botao-tela-principal {
-    background-color: #0A2540;
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 20px;
-    width: 100%;
-    font-weight: bold;
-    margin-top: 15px;
-    cursor: pointer;
-}
-
-#botao-tela-principal:hover {
-    background-color:  #ff0000;
-}
-
-
-
-.rodape {
-    background-color: #0A2540;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 20px;
-}
-
-/* Estilos para usuário logado e logout */
-#usuario-logado {
-    font-size: 14px;
-    color: #fff;
-}
-
-#logout-btn {
-    background-color: #ff0000;
-    color: white;
-    border: none;
-    padding: 6px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 12px;
-}
-
-#logout-btn:hover {
-    background-color: #cc0000;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .topo {
-        padding: 10px;
-    }
-
-    .topo h1 {
-        font-size: 1.5em;
-    }
-
-    .user-info {
-        gap: 8px;
-    }
-
-    #usuario-logado {
-        font-size: 12px;
-    }
-
-    #logout-btn {
-        padding: 5px 8px;
-        font-size: 11px;
-    }
-
-    .caixa-externa {
-        padding: 15px;
-    }
-
-    .form-container {
-        padding: 20px;
-        max-width: 350px;
-    }
-
-    .caixa-pesquisa {
-        max-width: 100%;
-        padding: 8px 12px;
-    }
-
-    #pedido {
-        padding: 8px;
-    }
-
-    #enviar {
-        padding: 8px 12px;
-    }
-
-    #botao-tela-principal {
-        padding: 10px;
-    }
-
-    .rodape {
-        padding: 15px;
-    }
-
-    #usuario-logado {
-        font-size: 14px;
-    }
-
-    #logout-btn {
-        padding: 6px 10px;
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 480px) {
-    .topo h1 {
-        font-size: 1.2em;
-    }
-
-    .user-info {
-        gap: 5px;
-    }
-
-    #usuario-logado {
-        font-size: 10px;
-    }
-
-    #logout-btn {
-        padding: 4px 6px;
-        font-size: 10px;
-    }
-
-    .form-container {
-        padding: 15px;
-        max-width: 300px;
-    }
-
-    .caixa-pesquisa {
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    #pedido {
-        width: 100%;
-    }
-
-    #enviar {
-        width: 100%;
-    }
-
-    #botao-tela-principal {
-        padding: 8px;
-        font-size: 14px;
-    }
-
-    .rodape {
-        padding: 10px;
-        font-size: 14px;
-    }
-
-    #usuario-logado {
-        font-size: 12px;
-    }
-
-    #logout-btn {
-        padding: 5px 8px;
-        font-size: 12px;
-    }
-}
-/* Modal styles */
-dialog {
-    border: none;
-    border-radius: 12px;
-    padding: 25px;
-    width: 320px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    animation: pop 0.2s ease-in-out;
-}
-
-@keyframes pop {
-    from {
-        transform: scale(0.9);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-dialog::backdrop {
-    background: rgba(0, 0, 0, 0.6);
-}
-
-dialog h3 {
-    color: #0A2540;
-    margin-bottom: 10px;
-}
-
-dialog p {
-    margin-bottom: 20px;
-}
-
-dialog button {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 8px;
-    background: #0A2540;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-dialog button:hover {
-    background: #163d66;
-}
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-label {
-    font-weight: bold;
-    color: #0A2540;
-    margin-bottom: 5px;
-}
-
-.topo {
-    background-color: #0A2540;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.user-info {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.caixa-pesquisa {
-    display: flex;
-    gap: 10px;
-    width: 100%;
-
-    background: #f0f4f8;
-    padding: 10px 15px;
-    border-radius: 30px;
-
-    max-width: 500px;
-    border: 2px solid #0A2540;
-}
-
-.legenda {
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #0A2540;
-    letter-spacing: 1px;
-}
-
-.caixa {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
-}
-
-.caixa-externa {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-.form-container {
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-
-    width: 90%;
-    max-width: 400px;
-
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
-}
-
-h2 {
-    color: #0A2540;
-}
-
-/*INPUT */
-#pedido {
-    flex: 1;
-    padding: 10px;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-}
-
-/*  BOTÃO PESQUISAR */
-
-
-#enviar {
-    background-color: #0A2540;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 25px;
-    cursor: pointer;
-}
-
-#enviar:hover {
-    background-color: #133d66;
-}
-
-/*  BOTÃO CADASTRO */
-
-
-#botao-tela-principal {
-    background-color: #0A2540;
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 20px;
-    width: 100%;
-    font-weight: bold;
-    margin-top: 15px;
-    cursor: pointer;
-}
-
-#botao-tela-principal:hover {
-    background-color:  #ff0000;
-}
-
-
-
-.rodape {
-    background-color: #0A2540;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 20px;
-}
-
-/* Estilos para usuário logado e logout */
-#usuario-logado {
-    font-size: 14px;
-    color: #fff;
-}
-
-#logout-btn {
-    background-color: #ff0000;
-    color: white;
-    border: none;
-    padding: 6px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 12px;
-}
-
-#logout-btn:hover {
-    background-color: #cc0000;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .topo {
-        padding: 10px;
-    }
-
-    .topo h1 {
-        font-size: 1.5em;
-    }
-
-    .user-info {
-        gap: 8px;
-    }
-
-    #usuario-logado {
-        font-size: 12px;
-    }
-
-    #logout-btn {
-        padding: 5px 8px;
-        font-size: 11px;
-    }
-
-    .caixa-externa {
-        padding: 15px;
-    }
-
-    .form-container {
-        padding: 20px;
-        max-width: 350px;
-    }
-
-    .caixa-pesquisa {
-        max-width: 100%;
-        padding: 8px 12px;
-    }
-
-    #pedido {
-        padding: 8px;
-    }
-
-    #enviar {
-        padding: 8px 12px;
-    }
-
-    #botao-tela-principal {
-        padding: 10px;
-    }
-
-    .rodape {
-        padding: 15px;
-    }
-
-    #usuario-logado {
-        font-size: 14px;
-    }
-
-    #logout-btn {
-        padding: 6px 10px;
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 480px) {
-    .topo h1 {
-        font-size: 1.2em;
-    }
-
-    .user-info {
-        gap: 5px;
-    }
-
-    #usuario-logado {
-        font-size: 10px;
-    }
-
-    #logout-btn {
-        padding: 4px 6px;
-        font-size: 10px;
-    }
-
-    .form-container {
-        padding: 15px;
-        max-width: 300px;
-    }
-
-    .caixa-pesquisa {
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    #pedido {
-        width: 100%;
-    }
-
-    #enviar {
-        width: 100%;
-    }
-
-    #botao-tela-principal {
-        padding: 8px;
-        font-size: 14px;
-    }
-
-    .rodape {
-        padding: 10px;
-        font-size: 14px;
-    }
-
-    #usuario-logado {
-        font-size: 12px;
-    }
-
-    #logout-btn {
-        padding: 5px 8px;
-        font-size: 12px;
-    }
-}
 /* Modal styles */
 dialog {
     border: none;
