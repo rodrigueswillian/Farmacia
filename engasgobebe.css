@@ -9,11 +9,12 @@ body {
 }
 
 .app {
-  background: white;
+  background: var(--surface, white);
+  color: var(--text-color, #1e2a33);
   width: 370px;
   border-radius: 25px;
   padding: 20px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
   position: relative;
 }
 
