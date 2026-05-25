@@ -3,10 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Queimadura</title>
 
-  <script src="telaqueimadura.js"></script>
+  <link rel="stylesheet" href="site-global.css">
   <link rel="stylesheet" href="telaqueimadura.css">
+
+  <script src="telaqueimadura.js"></script>
+  <script src="site-global.js" defer></script>
 </head>
 
 <body>
@@ -16,7 +20,7 @@
     <div id="modalBox" class="modal-box"></div>
   </div>
 
-  <!-- HEADER AZUL (TÍTULO + MENU) -->
+  <!-- HEADER -->
   <header class="principal">
 
     <div class="principaltexto">
@@ -24,19 +28,44 @@
       <p>Informações rápidas e confiáveis para primeiros socorros.</p>
     </div>
 
+    <!-- MENU -->
     <nav class="menu">
+
       <ul class="menu-links">
-        <li><a href="tela-inicial.html">Início</a></li>
-        <li><a href="tratamentoqueimadura.html">Tratamentos</a></li>
-        <li><a href="autismo.html">Autismo</a></li>
-        <li><a href="telainicial-engasgo.html">Engasgo</a></li>
+
+        <li>
+          <a href="tela-inicial.html">
+            <span>Início</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="tratamentoqueimadura.html">
+            <span>Tratamentos</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="autismo.html">
+            <span>Autismo</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="telainicial-engasgo.html">
+            <span>Engasgo</span>
+          </a>
+        </li>
+
       </ul>
+
     </nav>
 
   </header>
 
   <!-- CARDS -->
   <section class="cards">
+
     <h2>Tipos de Queimaduras</h2>
 
     <div class="card-container">
@@ -60,13 +89,20 @@
       </div>
 
     </div>
+
   </section>
 
   <!-- QUIZ -->
   <section class="quiz">
+
     <h2>Não sabe o grau da queimadura?</h2>
+
     <p>Responda algumas perguntas rápidas:</p>
-    <button onclick="diagnostico()">Descobrir agora</button>
+
+    <button onclick="diagnostico()">
+      Descobrir agora
+    </button>
+
   </section>
 
   <!-- FOOTER -->
