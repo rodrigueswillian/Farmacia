@@ -101,7 +101,7 @@ body {
   width: 0%;
   height: 2px;
 
-  background: white;
+  background: currentColor;
 
   transition: 0.3s;
 }
