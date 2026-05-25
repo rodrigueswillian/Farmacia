@@ -24,30 +24,42 @@ body {
 
 .topo {
   background: linear-gradient(135deg, #0A2540, #163d66);
+
   color: white;
 
   display: flex;
   flex-direction: column;
+
   align-items: center;
 
   padding-top: 50px;
 
+  padding-left: 120px;
+
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
+/* CENTRALIZAR TÍTULO */
+
 .titulo {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
   text-align: center;
+
+  margin: 0 auto;
+
   padding: 0 20px 40px;
 }
 
-.titulo h1 {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
-}
-
+.titulo h1,
 .titulo p {
-  font-size: 1.1rem;
-  opacity: 0.9;
+  text-align: center;
 }
 
 /* =========================
@@ -58,31 +70,48 @@ body {
   width: 100%;
 
   display: flex;
+
   justify-content: center;
   align-items: center;
+
+  margin: 0 auto;
 
   padding-bottom: 25px;
 }
 
 .menu-links {
   display: flex;
+
   gap: 20px;
 
   list-style: none;
 
-  background-color: white;
+  background-color: rgba(255,255,255,0.96);
+
+  border: 1px solid rgba(10,37,64,0.12);
 
   padding: 15px 25px;
 
   border-radius: 14px;
 
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.18);
+
+  margin: 0 auto;
+}
+
+.menu-links li {
+  position: relative;
 }
 
 .menu-links a {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
   text-decoration: none;
 
-  color: #0A2540;
+  color: #0A2540 !important;
 
   font-weight: 600;
 
@@ -90,14 +119,72 @@ body {
 
   border-radius: 8px;
 
-  transition: 0.3s;
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
+
+  position: relative;
+
+  overflow: hidden;
+
+  z-index: 1;
+}
+
+/* ANIMAÇÃO AZUL */
+
+.menu-links a::before {
+  content: '';
+
+  position: absolute;
+
+  inset: 0;
+
+  background: #0A2540;
+
+  opacity: 0;
+
+  transform: translateY(100%);
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+
+  border-radius: 8px;
+
+  z-index: -1;
+}
+
+/* HOVER */
+
+.menu-links li:hover a::before,
+.menu-links a:hover::before {
+  opacity: 1;
+
+  transform: translateY(0);
 }
 
 .menu-links a:hover {
-  background-color: #0A2540;
-  color: white;
+  color: white !important;
 
-  transform: scale(1.05);
+  transform: translateY(-2px);
+}
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark-theme .menu-links {
+  background-color: rgba(255,255,255,0.08);
+}
+
+body.dark-theme .menu-links a {
+  color: var(--text-color) !important;
+}
+
+body.dark-theme .menu-links a:hover {
+  background-color: var(--primary) !important;
+
+  color: white !important;
 }
 
 /* =========================
@@ -207,6 +294,7 @@ footer {
 
   .menu-links {
     flex-wrap: wrap;
+
     justify-content: center;
   }
 
@@ -243,6 +331,7 @@ footer {
 
   .container {
     flex-direction: column;
+
     align-items: center;
   }
 
