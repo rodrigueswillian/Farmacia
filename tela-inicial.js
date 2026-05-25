@@ -8,7 +8,11 @@ document.addEventListener("DOMContentLoaded", function () {
     // Usuário logado: mostrar nome e botão sair, ocultar botão cadastro
     const usuario = JSON.parse(usuarioLogado);
     const usuarioDiv = document.getElementById("usuario-logado");
-    usuarioDiv.innerHTML = `<p>Bem-vindo, ${usuario.nome}!</p>`;
+    usuarioDiv.innerHTML = `
+      <span class="user-avatar">👤</span>
+      <span class="user-name">Bem-vindo, ${usuario.nome}</span>
+    `;
+    usuarioDiv.classList.add("user-status");
 
     // Botão de logout
     const logoutBtn = document.getElementById("logout-btn");
