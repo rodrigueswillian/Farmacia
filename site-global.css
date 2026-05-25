@@ -1,0 +1,167 @@
+:root {
+  --base-font-size: 16px;
+  --bg-color: #f5f7fb;
+  --text-color: #0a2540;
+  --surface: #ffffff;
+  --surface-strong: #e7eef7;
+  --primary: #0a2540;
+  --primary-strong: #081a33;
+  --accent: #ff3b3b;
+  --border: rgba(10, 37, 64, 0.15);
+  --control-bg: rgba(255, 255, 255, 0.92);
+}
+html {
+  font-size: var(--base-font-size);
+  scroll-behavior: smooth;
+}
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+body * {
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+.dark-theme {
+  --bg-color: #0f1726;
+  --text-color: #f0f5ff;
+  --surface: #15203c;
+  --surface-strong: #1e2a52;
+  --primary: #8fb6ff;
+  --primary-strong: #aac4ff;
+  --accent: #ff5a5a;
+  --border: rgba(255, 255, 255, 0.12);
+  --control-bg: rgba(15, 20, 38, 0.95);
+}
+header.topo {
+  background: linear-gradient(180deg, var(--primary), var(--primary-strong));
+  color: white;
+}
+header.topo a,
+header.topo h1,
+header.topo p,
+header.topo li a {
+  color: inherit;
+}
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+.site-controls {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: var(--control-bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.35rem 0.45rem;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(12px);
+}
+.site-controls button {
+  border: none;
+  background: var(--primary);
+  color: white;
+  cursor: pointer;
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: transform 0.16s ease, background 0.16s ease, box-shadow 0.16s ease;
+}
+.site-controls button:hover {
+  background: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+}
+.site-controls button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+@media (max-width: 600px) {
+  .site-controls {
+    top: auto;
+    bottom: 1rem;
+    right: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .site-controls button {
+    min-width: 2.1rem;
+    min-height: 2.1rem;
+  }
+}
+
+/* Evita que o painel flutuante encoste ou sobreponha conteúdos do cabeçalho */
+header,
+.topo,
+.principal,
+.menu-box,
+.header {
+  position: relative;
+  z-index: 1;
+  padding-right: 14rem !important; /* cria espaço para o .site-controls */
+}
+
+@media (max-width: 600px) {
+  header,
+  .topo,
+  .principal,
+  .menu-box,
+  .header {
+    padding-right: 2rem !important;
+  }
+}
+
+/* Adapt dark theme surfaces without changing the original light design */
+body.dark-theme {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+body.dark-theme * {
+  color: var(--text-color) !important;
+}
+
+body.dark-theme main,
+body.dark-theme section,
+body.dark-theme .container,
+body.dark-theme .form-container,
+body.dark-theme .caixa-pesquisa,
+body.dark-theme .card,
+body.dark-theme .acoes,
+body.dark-theme .menu-box,
+body.dark-theme .menu-links,
+body.dark-theme .app,
+body.dark-theme .login-container,
+body.dark-theme .modal-box,
+body.dark-theme dialog,
+body.dark-theme .rodape,
+body.dark-theme .quiz,
+body.dark-theme .card-container {
+  background: var(--surface) !important;
+  color: var(--text-color) !important;
+  border-color: var(--border) !important;
+}
+
+/* Tornar controles menos intrusivos em temas escuros */
+.site-controls {
+  border-color: rgba(255,255,255,0.06);
+}
+
+.site-controls button {
+  background: linear-gradient(180deg,var(--primary),var(--primary-strong));
+}
+
+.site-controls button:hover {
+  background: var(--accent);
+}
