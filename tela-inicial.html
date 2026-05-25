@@ -3,18 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="site-global.css">
     <title>Segurança ShockLoud</title>
 
     <link rel="stylesheet" href="tela-inicial.css">
+    <script src="site-global.js" defer></script>
 </head>
 
 <body>
 
     <header class="topo">
-        <h1>🔒 ShockLoud Segurança</h1>
+        <div class="header-title">
+            <div class="app-badge">
+                <span class="app-icon">🔒</span>
+                <div>
+                    <h1>ShockLoud Segurança</h1>
+                    <p>Proteja seu dia a dia com tranquilidade</p>
+                </div>
+            </div>
+        </div>
         <div class="user-info">
-            <div id="usuario-logado"></div>
-            <button id="logout-btn">Sair</button>
+            <div id="usuario-logado" class="user-status">
+                <span class="user-avatar">👤</span>
+                <span class="user-name">Visitante</span>
+            </div>
+            <button id="logout-btn" class="logout-button">Sair</button>
         </div>
     </header>
 
