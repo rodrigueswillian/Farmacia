@@ -17,7 +17,7 @@ body {
 .topo {
   background: var(--surface);
 
-  padding: 40px 40px 35px;
+  padding: 40px 40px 35px 55px;
 
   border-radius: 15px;
 
@@ -36,12 +36,37 @@ body {
   align-items: center;
 }
 
+.menu-box {
+  width: 100%;
+
+  background: linear-gradient(
+    135deg,
+    #1982c4,
+    #0a2540
+  );
+
+  padding: 20px 25px 20px 50px;
+
+  border-radius: 15px;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+
+  display: flex;
+
+  justify-content: flex-start;
+
+  margin-top: 10px;
+}
+
 .cabecalho-texto {
   width: 100%;
 
   text-align: center;
 
   margin-bottom: 30px;
+
+  padding-left: 35px;
+  padding-right: 20px;
 }
 
 .cabecalho-texto h1 {
@@ -63,28 +88,6 @@ body {
 /* =========================
    MENU
 ========================= */
-
-.menu-box {
-  width: 100%;
-
-  background: linear-gradient(
-    135deg,
-    #1982c4,
-    #0a2540
-  );
-
-  padding: 20px 25px;
-
-  border-radius: 15px;
-
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-
-  display: flex;
-
-  justify-content: center;
-
-  margin-top: 10px;
-}
 
 .menu-links {
   display: flex;
