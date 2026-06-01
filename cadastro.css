@@ -79,7 +79,8 @@ dialog button:hover {
 
 /* HEADER */
 .header { 
-    display: flex;
+    padding:15px;
+    display: ruby-text;
     align-items: center;
     gap: 10px;
 }
