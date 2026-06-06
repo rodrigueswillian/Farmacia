@@ -9,7 +9,7 @@ body {
 }
 
 
-.app {
+.caixa {
   background: var(--surface, white);
   color: var(--text-color, #1e2a33);
   width: 370px;
@@ -19,7 +19,9 @@ body {
   position: relative;
 }
 
+
 header {
+  width: 100%;
   text-align: center;
   margin-bottom: 20px;
 }
