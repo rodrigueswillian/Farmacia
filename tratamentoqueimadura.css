@@ -32,9 +32,7 @@ body {
 
   align-items: center;
 
-  padding-top: 50px;
-
-  padding-left: 120px;
+  padding: 50px 20px 25px;
 
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
